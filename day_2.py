@@ -1,10 +1,4 @@
-from io import open
-from pathlib import Path
-
-
-input_file = Path(__file__).parent / "inputs" / "day_2.txt"
-with open(input_file, "r") as file:
-    input_lines_str = file.read().split("\n")
+from inputs.data_load import input_data_split
 
 
 shape_score = {
@@ -36,7 +30,7 @@ def identify_shape(elf: str, outcome: str) -> str:
 
 
 if __name__ == "__main__":
-    input_lines = [line.split() for line in input_lines_str]
+    input_lines = input_data_split(2)
     total_score = 0
     for elf, me in input_lines:
         total_score += score_round(elf, me)

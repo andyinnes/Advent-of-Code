@@ -1,10 +1,6 @@
-from io import open
-from pathlib import Path
+from inputs.data_load import input_data
 
-
-input_file = Path(__file__).parent / "inputs" / "day_3.txt"
-with open(input_file, "r") as file:
-    input_lines_str = file.read().split("\n")
+input_lines_str = input_data(3)
 
 def letter_priority(letter: str) -> int:
     order = ord(letter)

@@ -1,11 +1,7 @@
-from io import open
-from pathlib import Path
+from inputs.data_load import input_data_map
 
 
-input_file = Path(__file__).parent / "inputs" / "day_1.txt"
-with open(input_file, "r") as file:
-    input_lines_str = file.read().split("\n")
-input_lines = [int(line) if line else None for line in input_lines_str]
+input_lines = input_data_map(1, lambda row: int(row if row else None))
 
 
 if __name__ == "__main__":

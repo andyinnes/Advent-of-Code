@@ -1,12 +1,6 @@
-from io import open
-from pathlib import Path
+from inputs.data_load import input_data_split
 
-
-input_file = Path(__file__).parent / "inputs" / "day_4.txt"
-with open(input_file, "r") as file:
-    input_lines_str = file.read().split("\n")
-
-input_pairs = [inp.split(",") for inp in input_lines_str]
+input_pairs = input_data_split(4, ",")
 input_bounds = [
     tuple(tuple(map(int, elf.split("-"))) for elf in elf_row) for elf_row in input_pairs
 ]
